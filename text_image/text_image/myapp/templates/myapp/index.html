@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Text to Image Converter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            color: white;
+            background-image:url("{% static 'images\background.jpeg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #input_text {
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Semi-transparent white border */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            margin-left: 100px;
+            margin-top: 25px;
+            border-radius: 5px;
+            font-family: sans-serif;
+            backdrop-filter: blur(5px); /* Blurred background effect */
+        }
+
+        #font-spec {
+            margin-top: 20px;
+            padding-left: 55px;
+            font-family: sans-serif;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .font-spec-item {
+            margin: 10px;
+        }
+
+        #heading {
+            margin-left: 100px;
+            margin-top: 50px;
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+
+        .button {
+            position: absolute;
+            top: 435px;
+            left: 175px;
+            padding: 10px 20px;
+            margin-top: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Semi-transparent white border */
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            color: white;
+            font-size: 20px;
+            font-family: sans-serif;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: white; /* Semi-transparent white background */
+            color: black;
+        }
+        .image-container {
+            position: absolute;
+            top: 100px;
+            right: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Semi-transparent white border */
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            backdrop-filter: blur(5px);
+        }
+
+        #image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .download-button {
+            position: absolute;
+            top: 350px;
+            right: 150px;
+            padding: 10px 20px;
+            margin-top: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Semi-transparent white border */
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            color: white;
+            font-size: 20px;
+            font-family: sans-serif;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .download-button:hover {
+            background-color: white; /* Semi-transparent white background */
+            color: black;
+        }
+
+        /* New CSS */
+        .options {
+            margin-top: 20px;
+            padding-left: 60px;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: row;
+            font-family: sans-serif;
+            gap: 40px;
+        }
+
+        .options label {
+            margin-bottom: 5px;
+        }
+
+        .options .font-spec-item {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <h1 id="heading">INPUT TEXT</h1>
+        <!-- <label for="input_text">Enter Text:</label><br> -->
+        <textarea id="input_text" name="input_text"></textarea>
+        <div  id="font-spec">
+            <div style="display: flex; align-items: center;">
+                <div class="font-spec-item">
+                    <label for="font_size">Font Size:</label>
+                    <input type="number" id="font_size" name="font_size" value="24" min="1" max="72" >
+                </div>
+                <div class="font-spec-item">
+                    <label for="font_family">Font Family:</label>
+                    <select id="font_family" name="font_family">
+                        <option value="Arial">Arial</option>
+                        <option value="FORTE">FORTE</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                </div>
+                </div>
+                </div>
+        <div class="options">
+            <div class="color-selectors">
+            <label for="font_color">Font Color:</label>
+            <input type="color" id="font_color" name="font_color" value="black">
+        </div>
+        <div class="color-selectors">
+            <label for="background_color">Background Color:</label>
+            <input type="color" id="background_color" name="background_color" value="#FFFFFF">
+        </div>
+        </div>
+        <button   class="button"  >
+            Generate Image</button>
+            <div class="image-container">
+                <img src="{% static 'images/output.png' %}" alt="Converted Image">
+                
+            </div>
+            
+           
+        </form> 
+
+        <a class="download-button" id="download-button" href="{% url 'download_image' %}" download="generated_image.png">Download Image</a>
+     
+        
+</body>
+</html>
