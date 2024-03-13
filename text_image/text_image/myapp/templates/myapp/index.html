@@ -186,7 +186,8 @@
       <button class="button">Generate Image</button>
       <div class="image-container">
         {% if image_path %}
-        <img src="{{ image_path }}" alt="Converted Image" />
+        <!-- <img src="{{ image_path }}" alt="Converted Image" /> -->
+        <img src="data:image/jpeg;base64, {{image_path}}" alt="Converted dot" />
         {% endif %}
       </div>
     </form>

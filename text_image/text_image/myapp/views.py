@@ -13,9 +13,9 @@ def index(request):
         background_color = request.POST.get('background_color', '#FFFFFF')
         font_family = request.POST.get('font_family', 'Arial')
 
-        custom_image_path = Path(
-            'C:/Users/HP/Desktop/text_image/text_image/text_image/myapp/static/images/output.png')
-
+        # custom_image_path = Path('C:/Users/HP/Desktop/text_image/text_image/text_image/myapp/static/images/output.png')
+        custom_image_path = Path.joinpath(Path(__file__).parent,"output.png")
+        print(custom_image_path)
         image_path = text_to_image(
             input_text, font_size, font_color, font_family, background_color, custom_image_path)
         return render(request, 'myapp/index.html', {'image_path': image_path})
