@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zetabyte Website</title>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
+    <style>
+      body {
+        background-image: url("{% static 'images\background.jpeg' %}");
+        /* Replace 'background-image.jpg' with the path to your background image */
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+      }
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .navbar {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        right: 40px; /* Adjust as needed */
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 70px;
+        font-size: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      .section {
+        margin-top: 5rem;
+        width: 100%;
+        min-height: 100vh;
+        background-color: transparent;
+        color: white;
+        backdrop-filter: blur(5px);
+        border-radius:5rem;
+        margin:5rem;
+      }
+      .container {
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 100px;
+      }
+      .content-section {
+        float: left;
+        width: 55%;
+      }
+      .image-section {
+        float: right;
+        width: 40%;
+      }
+      .image-section img {
+        width: 45%;
+        height: auto;
+      }
+      .image-section .img2{
+        transform:translate(30%,50%);
+        position:relative;
+      }
+      .content-section .title {
+        text-transform: uppercase;
+        font-size: 28px;
+      }
+      .content-section .content h3 {
+        margin-top: 20px;
+        color: white;
+      }
+      .content-section .content p {
+        margin-top: 10px;
+        font-size: 17px;
+        line-height: 1.5;
+        width: 75%%;
+      }
+      .content-section .content .button {
+        position: absolute;
+        top: 479px; /* Adjust as needed */
+        left: 250px; /* Adjust as needed */
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 5px;
+        color: white;!important
+        font-size: 20px;
+        text-decoration: none;!important
+        transition: all 0.3s ease-in-out;
+      }
+      .content-section .content .button:hover {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Zetabyte</div>
+    <div class="navbar">
+      <a href="{% url 'main' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'team' %}">Team</a>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="content-section">
+          <div class="title">
+            <h1 class="title">About Us</h1>
+          </div>
+          <div class="content">
+            <h3>
+              Formerly ZettaByte SoftTech | Re(de)fining Education | Building
+              Future EdTech Platforms.
+            </h3>
+            <p>
+              Zettabyte Plus is a next-gen EdTech startup building future-proof
+              educational software. We thrive to build solutions that make
+              learning fun, engaging, and effective. At Zettabyte Plus, we
+              believe that everyone has the potential to succeed, and that
+              passion is the key to true success. We're on a mission to change
+              the current education system by making it more personalized,
+              interactive, and relevant to the needs of today's students. Our
+              software solutions are designed to help students learn at their
+              own pace, in their own way, and develop the skills they need to
+              succeed in the future. We use gamification and various other
+              innovative teaching methods to make learning more fun and
+              engaging, and to help students develop a lifelong love of
+              learning.
+            </p>
+            <div class="button">
+              <a href="{% static 'https://zbplus.pages.dev/' %}">Visit Us</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-section">
+          <img src="{% static 'images\zeta.jpeg' %}" />
+          <img src="{% static 'images\Designer1.png' %}" class="img2" />
+          <img src="{% static 'images\solution.png' %}" class="img2" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

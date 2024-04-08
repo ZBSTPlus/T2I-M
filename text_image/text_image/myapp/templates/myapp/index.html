@@ -11,6 +11,29 @@
         background-size: cover;
         background-repeat: no-repeat;
       }
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .navbar {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        right: 40px; /* Adjust as needed */
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 70px;
+        font-size: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
 
       #input_text {
         width: 300px;
@@ -140,6 +163,12 @@
     </style>
   </head>
   <body>
+    <div class="logo">Zetabyte</div>
+    <div class="navbar">
+      <a href="{% url 'main' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'team' %}">Team</a>
+    </div>
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
       <h1 id="heading">INPUT TEXT</h1>
@@ -184,6 +213,7 @@
         </div>
       </div>
       <button class="button">Generate Image</button>
+
       <div class="image-container">
         {% if image_path %}
         <!-- <img src="{{ image_path }}" alt="Converted Image" /> -->

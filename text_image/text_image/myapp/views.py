@@ -36,3 +36,11 @@ def download_image(request):
 
 def main(request):
     return render(request, 'myapp/main.html')
+
+
+def about(request):
+    return render(request, 'myapp/about.html')
+
+
+def team(request):
+    return render(request, 'myapp/team.html')

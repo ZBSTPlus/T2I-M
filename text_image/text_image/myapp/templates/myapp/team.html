@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zetabyte Website</title>
+
+    <style>
+      body {
+        background-image: url("{% static 'images\background.jpeg' %}");
+        /* Replace 'background-image.jpg' with the path to your background image */
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+      }
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .navbar {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        right: 40px; /* Adjust as needed */
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 70px;
+        font-size: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+      .team-section {
+        margin-top: 75px;
+        color: white;
+      }
+      .team-title h1 {
+        font-size: 50px;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+      .team-cards {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+      }
+      .team-card {
+        backdrop-filter: blur(5px);
+        border-radius: 50px;
+        width: 95%;
+        margin: 0px 10px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .team-image img {
+        border-radius: 50%;
+        height: 130px;
+        width: 130px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Zetabyte</div>
+    <div class="navbar">
+      <a href="{% url 'main' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'team' %}">Team</a>
+    </div>
+    <section class="team-section">
+      <div class="team-title">
+        <h1>OUR TEAM</h1>
+      </div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Shaik.Mubashira</h3>
+            <p>Team-Lead<br />Backend<br />frontend</p>
+            <p>FinalYear Student</p>
+            <h3>12006055</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile5.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Chavva Pallavi</h3>
+            <p>BackendDev</p>
+            <p>ThirdYearStudent</p>
+            <h3>12106059</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile3.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Balimidi Himaja</h3>
+            <p>UIdev</p>
+            <p>ThirdYearStudent</p>
+            <h3>12104003</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile2.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Rachamallu Saideepa</h3>
+            <p>UIdev</p>
+            <p>ThirdYearStudent</p>
+            <h3>12104041</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile1.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Pudi Bhavya Sri</h3>
+            <p>CodeHelp</p>
+            <p>ThirdYearStudent</p>
+            <h3>12104039</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-image">
+            <img src="{% static 'images\profile4.png' %}" />
+          </div>
+          <div class="team-detail">
+            <h3>Kanya Naga Pavan</h3>
+            <p>CodeHelp</p>
+            <p>FinalYearStudent</p>
+            <h3>12004027</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

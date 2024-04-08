@@ -1,90 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zetabyte Website</title>
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zetabyte Website</title>
 
-<style>
-  body {
-    background-image:url("{% static 'images\background.jpeg' %}"); 
-    /* Replace 'background-image.jpg' with the path to your background image */
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: sans-serif;
-  }
-  .logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .converter-text {
-    position: absolute;
-    top: 20px; /* Adjust as needed */
-    left: 100px; /* Adjust as needed */
-    padding-left: 100px;
-    padding-top: 120px;
-    color: white;
-    font-size: 50px;
-    font-weight: medium;
-  }
-  .get-started-btn {
-    position: absolute;
-    top: 400px; /* Adjust as needed */
-    left: 250px; /* Adjust as needed */
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-  }
-  .get-started-btn:hover {
-    background-color: white;
-    color: black;
-  }
-  .navbar {
-    position: absolute;
-    top: 20px; /* Adjust as needed */
-    right: 40px; /* Adjust as needed */
-  }
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-right: 70px;
-    font-size: 15px;
-    transition: all 0.3s ease-in-out;
-  }
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  .converter-description {
-    position: absolute;
-    top: 200px; /* Adjust as needed */
-    left: 100px; /* Adjust as needed */
-    color: white;
-    font-size: 18px;
-    padding-top: 70px;
-    padding-left: 100px;
-  }
-</style>
-</head>
-<body>
-  <div class="logo">Zetabyte</div>
-  <div class="converter-text">Text to Image <br> Converter</div>
-  <div class="converter-description">Convert text to image in seconds. <br> Adjust font colours,font sizes and <br> background colours easily...</div>
-  <a href="{% url 'index' %}" class="get-started-btn">Get Started</a>
-  <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Sevices</a>
-    <a href="#">Contact Us</a>
-  </div>
-  <!-- Your content goes here -->
-</body>
+    <style>
+      body {
+        background-image: url("{% static 'images\background.jpeg' %}");
+        /* Replace 'background-image.jpg' with the path to your background image */
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+      }
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .converter-text {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        left: 100px; /* Adjust as needed */
+        padding-left: 100px;
+        padding-top: 120px;
+        color: white;
+        font-size: 50px;
+        font-weight: medium;
+      }
+      .get-started-btn {
+        position: absolute;
+        top: 400px; /* Adjust as needed */
+        left: 250px; /* Adjust as needed */
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 5px;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .get-started-btn:hover {
+        background-color: white;
+        color: black;
+      }
+      .navbar {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        right: 40px; /* Adjust as needed */
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 70px;
+        font-size: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+      .converter-description {
+        position: absolute;
+        top: 200px; /* Adjust as needed */
+        left: 100px; /* Adjust as needed */
+        color: white;
+        font-size: 18px;
+        padding-top: 70px;
+        padding-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Zetabyte</div>
+    <div class="converter-text">
+      Text to Image <br />
+      Converter
+    </div>
+    <div class="converter-description">
+      Convert text to image in seconds. <br />
+      Adjust font colours,font sizes and <br />
+      background colours easily...
+    </div>
+    <a href="{% url 'index' %}" class="get-started-btn">Get Started</a>
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'team' %}">Team</a>
+    </div>
+    <!-- Your content goes here -->
+  </body>
 </html>
